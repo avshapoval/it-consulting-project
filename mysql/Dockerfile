@@ -1,4 +1,4 @@
-# Use the official image as a parent image
+# Использование официального образа в качестве родительского
 FROM mysql:5.7
-# Expose the port mysql is reachable on
+# Открытие порта, на котором доступен MySQL
 EXPOSE 3306

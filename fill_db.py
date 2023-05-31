@@ -23,7 +23,7 @@ db = pymysql.connect(host=con_params['HOST'],
 cursor = db.cursor()
 
 # Список позиций (должностей)
-positions = ["Engineer", "Developer", "Manager", "Analyst", "Designer", "Architect", "Tester", "Administrator", "Consultant", "Support"]
+positions = ["Инженер", "Разработчик", "Менеджер", "Аналитик", "Дизайнер", "Архитектор", "Тестировщик", "Администратор", "Консультант", "Поддержка"]
 
 # Добавление позиций в базу данных
 for position in positions:
