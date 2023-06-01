@@ -8,7 +8,7 @@ fake = Faker(locale='ru_RU')
 
 con_params = {}
 with open ('./.env', 'r') as f:
-    con_params['HOST'] = 'localhost'
+    con_params['HOST'] = '84.201.158.141'
     for line in f.readlines():
         param_value = line.strip('\n').split('=')
         con_params[param_value[0].strip()] = param_value[1].strip()

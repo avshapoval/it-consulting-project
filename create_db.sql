@@ -39,7 +39,7 @@ CREATE TABLE IF NOT EXISTS attendance.emp_fingerprint(
 CREATE TABLE IF NOT EXISTS attendance.visit(
 	visit_id int NOT NULL AUTO_INCREMENT PRIMARY KEY,
 	terminal_id int NOT NULL REFERENCES terminal(terminal_id),
-	fingerprint_uuid varchar(36) NOT null,
+	fingerprint_uuid varchar(36),
 	is_matched bool NOT NULL,
 	visit_ts timestamp NOT NULL
 );
