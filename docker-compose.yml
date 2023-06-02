@@ -12,10 +12,10 @@ services:
       - "3306:3306"
       
   app:
-    build: ./emulation
+    build: ./terminal_simulation
     restart: always
     volumes:
-      - ./emulation:/app
+      - ./terminal_simulation:/app
     links:
       - "db"
     depends_on:
