@@ -1,10 +1,13 @@
 import pymysql
 import random
 from datetime import datetime, timedelta, time
+from os.path import dirname, abspath
 
 # Подключение к базе данных
 con_params = {}
-with open ('./.env', 'r') as f:
+parent_dir = dirname(dirname(abspath(__file__)))
+
+with open (f'{parent_dir}/.env', 'r') as f:
     con_params['HOST'] = '84.201.158.141'
     for line in f.readlines():
         param_value = line.strip('\n').split('=')
