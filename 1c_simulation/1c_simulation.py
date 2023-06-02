@@ -3,23 +3,25 @@ import pandas as pd
 import tkinter as tk
 from tkinter import ttk
 from pandastable import Table
-
+from os.path import dirname, abspath
 
 # Параметры подключения к базе данных
-host = "84.201.158.141" # Название хоста
-user = "srv.powerbi_reporter" # Имя пользователя
-password = "cons_password" # Пароль
-database = "attendance" # Название базы данных
+con_params = {}
+parent_dir = dirname(dirname(abspath(__file__)))
+
+with open (f'{parent_dir}/.env', 'r') as f:
+    con_params['HOST'] = '84.201.158.141'
+    for line in f.readlines():
+        param_value = line.strip('\n').split('=')
+        con_params[param_value[0].strip()] = param_value[1].strip()
 
 # Создаем подключение к базе данных
-connection = pymysql.connect(
-    host=host,
-    user=user,
-    password=password,
-    database=database,
-    cursorclass=pymysql.cursors.DictCursor,
-    port=3306
-)
+connection = pymysql.connect(host=con_params['HOST'],
+                     user=con_params['MYSQL_USER'],
+                     password=con_params['MYSQL_PASSWORD'],
+                     db=con_params['MYSQL_DATABASE'],
+                     cursorclass=pymysql.cursors.DictCursor,
+                     port=3306)
 
 # Запрос на получение имен и фамилий сотрудников
 query = """
