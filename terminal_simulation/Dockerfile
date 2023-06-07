@@ -7,4 +7,4 @@ WORKDIR /app
 # Установка необходимых пакетов, указанных в requirements.txt
 RUN pip install --no-cache-dir -r requirements.txt
 # Выполнение команды
-CMD ["python", "emulate_terminals.py"]
+CMD ["python", "simulate_terminals.py"]
