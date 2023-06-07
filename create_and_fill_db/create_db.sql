@@ -25,7 +25,7 @@ CREATE TABLE IF NOT EXISTS terminal (
 	terminal_id int NOT NULL AUTO_INCREMENT PRIMARY KEY,
 	terminal_uuid varchar(36) NOT NULL,
 	is_active bool NOT null,
-	deployed_at timestamp,
+	deployed_at timestamp
 );
 
 -- Отпечатки пальцев - хранятся в виде uuid, подразумевается шифрование биометрии на уровне БД
