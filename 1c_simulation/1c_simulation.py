@@ -3,9 +3,10 @@ import pandas as pd
 import tkinter as tk
 from tkinter import ttk
 from pandastable import Table
+from os.path import dirname, abspath
 
 
-# Параметры подключения к базе данных
+
 host = "****" # Название хоста
 user = "****" # Имя пользователя
 password = "****" # Пароль
@@ -19,6 +20,7 @@ connection = pymysql.connect(
     cursorclass=pymysql.cursors.DictCursor,
     port=3306
 )
+
 
 
 query = """
