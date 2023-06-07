@@ -1,4 +1,1 @@
-MYSQL_ROOT_PASSWORD = root
-MYSQL_DATABASE = attendance
-MYSQL_USER = srv.powerbi_reporter
-MYSQL_PASSWORD = cons_password
+
